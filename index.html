@@ -608,34 +608,41 @@
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
-
 <script>
-$(document).ready(function() {
-        var player,player2,player3,player4;
-      function onYouTubeIframeAPIReady() {
 
+      var player,player2,player3,player4;
+      function onYouTubeIframeAPIReady() {
         player = new YT.Player('player');
         player2 = new YT.Player('player2');
         player3 = new YT.Player('player3');
         player4 = new YT.Player('player4');
       }
+</script>
 
-    $("div[rel]").overlay({
+<script>
+$(document).ready(function() {
 
+    setTimeout(function(){
 
-
-            onBeforeClose: function() {
-                // console.log(player);
-                player.stopVideo();
-                // player.pauseVideo();
-                // player2.pauseVideo();
-                // player3.pauseVideo();
-                // player4.pauseVideo();
-        }
+        $("div[rel]").overlay({
 
 
 
-    });
+                onBeforeClose: function() {
+                    console.log(player);
+                    player.stopVideo();
+                    player.pauseVideo();
+                    player2.pauseVideo();
+                    player3.pauseVideo();
+                    player4.pauseVideo();
+            }
+
+
+
+        });
+
+    },0)
+
 });
 
 
