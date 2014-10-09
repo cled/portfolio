@@ -1,0 +1,72 @@
+#currentContainer {
+    clear: right;
+    width: 97.5%;
+    position: absolute;
+    left: 0;
+    top: -26px;
+    margin: 0px auto;
+    color: #fff;
+    z-index: 2;
+    margin-left: 2.5%; /* width of left corner */
+    height: 100%;
+}
+
+.current-container-content,
+.current-container-top,
+.current-container-bottom,
+.current-container-bottom div {
+    background: url('../images/bg_currentContainer.png') no-repeat top right;
+}
+
+.current-container-content {
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+}
+
+.current-container-top {  /* top left vertical */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 25px; /* top width */
+    margin-left: -25px;
+    height: 100%;
+    background-position: top left;
+}
+
+.current-container-bottom {  /* bottom */
+    position: relative;
+    width: 100%;
+}
+
+.current-container-bottom,
+.current-container-bottom div {
+    height: 25px; /* bottom height */
+    font-size: 1px;
+}
+
+.current-container-bottom {
+    background-position: bottom right;
+}
+
+.current-container-bottom div {
+    position: relative;
+    width: 25px; /* bottom left corner width */
+    margin-left: -25px;
+    background-position: bottom left;
+}
+
+.current-container-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+h1, p {
+    margin: 0px; /* leave this alone */
+    padding: 0.5em 0px 0.5em 0px;
+}
+
+h1 {
+    padding-bottom: 0px;
+}

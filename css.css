@@ -1,0 +1,295 @@
+
+
+
+
+a:link {color: #ffffff; text-decoration: none;}
+a:visited {color: #ffffff; text-decoration: none;}
+a:hover {color: #cc3333; text-decoration: none;}
+a:active {color: #ffffff; text-decoration: none; outline:none;}
+
+:focus {
+  -moz-outline-style:none;
+}
+
+html {overflow: auto;	margin: 0;	padding: 0;}
+p{display:inline;}
+img {border:0;}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, sans-serif;
+	font-size:14px;
+	background: #005183 url(../piratescene2.jpg) no-repeat fixed;
+	text-align:center;
+    }
+
+.spacer {
+    min-width:600px;
+    max-width:1000px;
+    padding: 0;
+    margin: 20px 8%;
+    height:inherit;
+    }
+
+.pageHeader{
+ background-color: #000;
+ margin-right:600px;
+ height:45px;
+ text-indent:20px;
+ width:350px;
+ float:left;
+}
+
+.pageTitle {
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    padding:0;
+    text-align:left;
+    height:45px;
+    cursor:default;
+}
+
+
+
+.cursor {
+	position:relative;
+	top:1px;
+	left:-1px;
+	cursor:text;
+	padding-top:12px;
+}
+	
+.content {
+	margin-top:20px;
+	min-width:600px;
+	width:600px;
+}
+
+.minimize {
+	left:0;
+	width:20px;
+	position:relative;
+	float:left;
+
+	}
+.minimize img{
+	bottom:-1px;
+	}
+
+
+
+div.titleHover:hover{
+	border-color: #ccc;
+	background: #000 url(../down.jpg) no-repeat top right;
+
+}
+
+
+.titlesText {
+	color: #ffffff;
+	width: 214px;
+	text-align: left;
+	line-height:40px;
+	height:45px;
+	cursor:default;
+}
+                    	
+    
+.titlesBG {
+	width:600px;
+	height: 45px;
+	background: #000000;
+	color: #ffffff;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #000;
+}
+
+
+a.titlesLink:link {color: #ffffff; text-decoration: none;}
+a.titlesLink:visited {color: #ffffff; text-decoration: none;}
+a.titlesLink:hover {color: #cc3333; text-decoration: none;}
+a.titlesLink:active {color: #ffffff; text-decoration: none;}
+
+.media {
+    position: relative;
+    width:204px;
+    height:203px;
+    background-color:#000;
+    margin: 0px 0px 0px 0px;
+    top:-20px;
+}
+
+.magnifyVideo,.magnifyVideo2 {
+	position:absolute;
+	bottom:0px;
+	right:5px;
+	width:75px;
+	height:75px;
+	background:url('../magnify.png');
+	cursor:pointer;
+}
+
+div.magnifyVideo:hover,div.magnifyVideo2:hover {
+	background:url('../magnify-hover.png');
+	outline:none;
+}
+
+
+
+.magnify,.magnify2 {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	width:204px;
+	height:203px;
+	background:url('../magnify.png') right bottom no-repeat;
+	cursor:pointer;
+}
+
+div.magnify:hover,div.magnify2:hover {
+	background:url('../magnify-hover.png') right bottom no-repeat;
+	outline:none;
+}
+
+.left20 {
+    left:20px;
+    float:left;
+    }
+
+.right20 {
+	right:20px;
+	float: right;
+    }
+
+.left {
+	float: left;
+    }
+
+
+.right {
+	float: right;
+    }
+
+.transC {  
+    padding: 0;  
+    width: 194px;
+    
+    position: relative;  
+    margin: 0;
+    overflow: hidden;
+    z-index: -2;
+    border:1px;
+    
+}
+
+.transparency {  
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    background-color: #e0e0e0;
+    width: 340px;
+    height: 500px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -4;
+
+}
+
+.contentText {
+    position: relative;
+    left:10px;
+    margin: 0;
+    padding: 5px 15px 10px 0px;
+    font-weight: bold;
+    text-align:left;
+}
+
+
+div.overlay {
+    background:url(../FP2K2/images/bg.jpg);
+    width:933px;
+    height:900px;
+    display:none;
+    padding:0px;
+    border:2px solid #000;
+} 
+ 
+div.overlay div.close { 
+    background-image:url(../close.png); 
+    position:absolute; 
+    right:5px; 
+    top:5px; 
+    cursor:pointer; 
+    height:35px; 
+    width:35px; 
+    text-align:left;
+} 
+.external{
+width:100%;
+height:100%;
+border:0;
+display:block;
+
+}
+
+div.overlayVideo {
+	padding:0px;	
+	width:960px;
+	height:540px;
+	display:none;
+	background:url(../videobg.jpg);
+	border:2px solid #000;
+	border-top:35px solid #111;
+}
+
+div.overlayVideo div.close {
+	background:url(../close.png) no-repeat;
+	position:absolute;
+	top:-35px;
+	right:2px; 
+	width:35px;
+	height:35px;
+	cursor:pointer;
+}
+
+div.overlayVideo a {
+	height:540px;
+	display:block;
+	background:#000;
+}
+
+
+div.overlayVideo2 {
+	padding:0px;	
+	width:480px;
+	height:360px;
+	display:none;
+	background:url(../videobg.jpg);
+	border:2px solid #000;
+	border-top:35px solid #111;
+}
+
+div.overlayVideo2 div.close {
+	background:url(../close.png) no-repeat;
+	position:absolute;
+	top:-35px;
+	right:2px; 
+	width:35px;
+	height:35px;
+	cursor:pointer;
+}
+
+div.overlayVideo2 a {
+	height:360px;
+	display:block;
+	background:#000;
+}
+.spaceRobot {
+margin-bottom:85%;
+float:left;
+}
+

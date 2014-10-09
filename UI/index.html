@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lab UI</title>
+
+    <script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.8.2.custom.min.js"></script>
+
+    <link type="text/css" href="styles/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/selectable.css" media="screen">
+    <link rel="stylesheet" href="styles/current.css" media="screen">
+    <link rel="stylesheet" href="styles/currentContent.css" media="screen">
+    <link rel="stylesheet" href="styles/currentContainer.css" media="screen">
+    <link rel="stylesheet" href="styles/lab-list.css" media="screen">
+
+    <script type="text/javascript">
+
+    $(function() {
+        function newListItem(labID, title, description) {
+            var $LabListItem = $('div#lab-list-item-template')
+                                    .clone()
+                                    .attr('id', 'lab-list-item-' + labID)
+                                    .removeClass('template');
+
+            $LabListItem
+                .mouseover(function() {
+                    $(this).find(".selectable-main,.selectable-left,.selectable-top,.selectable-bottom,.selectable-bottom-left")
+                        .addClass('current-content-over');
+                })
+                .mouseout(function() {
+                    $(this).find(".selectable-main,.selectable-left,.selectable-top,.selectable-bottom,.selectable-bottom-left")
+                        .removeClass('current-content-over');
+                 })
+                .click(function(e) {
+                    $LabPopup = $('.lab-popup');
+                    $LabPopup.find('.lab-popup-id').html(labID);
+                    $LabPopup.find('.lab-popup-title').html(title);
+                    $LabPopup.find('.lab-popup-description').html(description);
+
+                    $LabPopup.find('.lab-popup-content').show();
+
+                    $LabPopup.find(".lab-popup-launch-button")
+                        .unbind('click')
+                        .click(function(){
+                            // scroll everything to the top
+                            $.scrollTo(0);
+                            $('#lab-list').scrollTo(0);
+
+                            // hide the popup content
+                            $('.lab-popup-content').hide();
+
+                            // move popup to top to act as header
+                            $('.lab-popup').position({
+                                    my: 'right top',
+                                    at: 'right top',
+                                    of: $('.resolution'),
+                                    offset: '0 0'
+                            });
+
+                            $('.lab-popup').addClass('lab-popup-launched');
+
+                            // show and expand the tabs to current window dimension
+                            $('#currentContainer').position({'offset': '0'});
+                            $('#currentContainer').position({
+                                my: 'right top',
+                                at: 'right top',
+                                of: $('#lab-list'), //'#lab-list-item-' + labID),
+                                offset: '-50 50'
+                            });
+
+                            $('#currentContainer').effect('slide', { direction: "up" }, 200);
+
+                            // remap close button to 'end lab'
+                        });
+
+                    // move the popup to the right position
+                    $('.lab-popup')
+                        .css({
+                            'top': $(this).position().top,
+                            'left': '40px'
+                        });
+
+                    $(".fade")
+                        .css("background","url('images/fade.png')")
+                        .fadeIn();
+
+                    $("#POCContainer").show(0);
+                    $("#POC").fadeIn(300);
+                 })
+                .find('div,h2,p')
+                    .addClass('clickable');
+
+            $LabListItem.find('.lab-list-item-id').html(labID);
+            $LabListItem.find('.lab-list-item-title').html(title);
+            $LabListItem.find('.lab-list-item-description').html(description);
+
+            return $LabListItem;
+        }
+
+        for (var i = 1; i <= 15; i++) {
+            $('#lab-list').append(newListItem('id' + i, 'Title', 'Lab description. This is some description of the lab. Hopefully it\'s compelling enough to click on.  Wouldn\'t it be nice if people clicked on these labs?'));
+        }
+
+        $("#content-tabs").tabs();
+        $(".fade").css("background","transparent");
+        $("#POCContainer").hide();
+        $("#POC")
+            .hide();
+
+        $('BUTTON').button()
+
+        $(".close")
+            .click(function() {
+                $('#currentContainer').hide();
+                $(".fade").css("background","transparent");
+                $("#POC").fadeOut(0);
+                $("#POCContainer").hide(0);
+            });
+    });
+
+    </script>
+</head>
+
+<body>
+    <div class="resolution">
+        <div class="fade">
+            <div class="title"><h1>Labs</h1>
+            </div>
+
+            <div id="lab-list">
+
+                <div id="lab-list-item-template" class="selectable clickable template">
+                    <div class="selectable-content">
+                        <div class="selectable-wrapper">
+                            <div class="selectable-left"></div>
+                            <div class="selectable-main">
+                                <div class="selectable-header">
+                                    <div class="selectable-header-item">
+                                        <h2 class="lab-list-item-id">LabID</h2>
+                                    </div>
+                                    <div class="selectable-header-item">
+                                        <h2 class="lab-list-item-title">Lab Title</h2>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="selectable-body">
+                                    <p class="lab-list-item-description">Lab description. This is some description of the lab. Hopefully it's compelling enough to click on.  Wouldn't it be nice if people clicked on these labs?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="selectable-bottom-container">
+                            <div class="selectable-bottom-left">
+                            </div>
+                            <div class="selectable-bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="POCContainer">
+                <div id="POC">
+
+                    <div class="lab-popup" id="current">
+                        <div class="current-content">
+                            <div class="current-top">
+                            </div>
+                            <div>
+                                <div class="current-header">
+                                    <h2 class="lab-popup-id">Lab ID</h2>
+                                </div>
+                                <div class="current-header">
+                                    <h2 class="lab-popup-title">Descriptive Lab Title</h2>
+                                </div>
+                                <div class="close">
+                                </div>
+                            </div>
+
+                            <div class="lab-popup-content">
+                                <div class="lab-popup-buttons">
+                                    <button class="play lab-popup-launch-button">Launch Lab</button><br>
+                                    <button class="play lab-popup-eval-button">Eval</button>
+                                </div>
+                                <div class="lab-popup-description">
+                                    Some description
+                                </div>
+                            </div>
+
+                        </div><!--current-content-->
+                        <div class="current-bottom">
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="currentContainer" style="display: none;">
+                        <div class="current-container-content">
+                            <div class="current-container-top">
+                            </div>
+                            <div class="current-container-body">
+                                <div id="content-tabs">
+                                    <ul>
+                                        <li>
+                                            <a href="#content-tab-1">
+                                                Tabs 1
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="currentContent">
+                                        <div class="current-content-content">
+                                            <div class="current-content-top">
+                                            </div>
+                                            <div class="current-content-body">
+                                                <div id="content-tab-1">
+                                                    Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1 Content Tabs 1
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="current-content-bottom">
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="current-container-bottom">
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--#POC-->
+            </div><!--#POCContainer-->
+        </div><!--fade-->
+    </div><!--resolution-->
+</body>
+</html>

@@ -1,0 +1,116 @@
+Really Simple(TM) Slideshow
+===========================
+
+Yet another slideshow plugin for jQuery! This particular one loads images dynamically, as and when they're required by the slideshow, allowing you to create larger slideshows without having to pre-load all of the images.
+
+Include rsf-slideshow-1.0.js in your document, then initialise a slideshow like this:
+
+$('#my-slidshow-div').rsfSlideshow();
+
+Please see docs for information about adding slides, and the correct HTML markup.
+
+For detailed docs and demos, visit:
+http://reallysimpleworks.com/slideshow
+
+
+Change Log
+==========
+
+Version 1.4.11 -- 19 Apr 2012
+-----------------------------
+* BUG FIX: Fixed bug where slideshow moved to the second slide and then stopped.
+
+Version 1.4.10 -- 11 Mar 2012
+---------------------------
+* BUG FIX: RSS now waits for the current slide to load before moving the slideshow on to the next.
+* Updated jQuery version to latest stable (1.7.1) in demos and tests.
+
+Version 1.4.9 -- 11 Mar 2012
+---------------------------
+* `rsSlideReady` event added.
+* Callback demo updated to provide an example of using the `rsSlideReady` event to add a custom class to an individual slide.
+
+Version 1.4.8 -- 5 Jul 2011
+---------------------------
+* All public methods now return a jQuery collection (unless they return specific data).
+* QUnit test suite updated to include tests for all public methods.
+
+Version 1.4.7 -- 30 Jun 2011
+---------------------------
+* Improved the handling of the removal of outgoing slide elements.
+* Moved all transition effects into the $.refSlideshow.transitions object, allowing for extension of the slideshow effects.
+* Improved the code documentation in the non-minified version of the plugin code.
+* BUG FIX: Added an asynchronous method for determining image dimensions, which prevent an occasional race condition in Chrome.
+* Added a CSS rule to fix the broken fade transition effect in IE8.
+
+Version 1.4.6 -- 1 Jun 2011
+---------------------------
+* Added support for optional image alt and title parameters (requires custom options).
+
+Version 1.4.5 -- 27 May 2011
+---------------------------
+* Added HTML cpations demo.
+* Accommodated for HTML captions.
+* Changed caption container element from span to div.
+* Removed the broken controlsdemo.html
+
+Version 1.4.4 -- 18 May 2011
+---------------------------
+* Fixed bug causing fatal "Object doesn't support this..." error in IE 6/7/8. 
+
+Version 1.4.3 -- 17 May 2011
+---------------------------
+* Fixed bug causing the play/pause control to start in the "playing" state when the autostart setting is set to false.
+
+Version 1.4.2 -- 12 May 2011
+---------------------------
+* Fixed fatal bug introduced in previous update.
+* Improved image width detection to fix occasional image positioning bug in certain browsers.
+
+Version 1.4.1 -- 12 May 2011
+---------------------------
+* Renamed the 'private' object to 'RssPrivateMethods' to avoid problems with the global namespace.
+* Tidy up of the code and correction of some minor errors.
+
+Version 1.4 -- 5 May 2011
+---------------------------
+* Added the removeSlides() method.
+* Added the getSlideData() method.
+* Included QTest unit testing (for new methods only).
+
+Version 1.3.1 -- 2 May 2011
+---------------------------
+* Fixed image size detection bug when resizing images using CSS.
+* Fixed bug causing controls to be auto-generated regardless of settings.
+* Private methods are no longer available publicly
+* Moved all default options to $.rsfSlideshow.defaults
+
+Version 1.3 -- 1 May 2011
+-------------------------
+* Added the controls option.
+* Changed the name of the eventCallbacks option to eventHandlers.
+* Changed the behaviour of the following methods: bindPlayPause, bindPreviousSlide, bindNextSlide and bindIndex so that they require jQuery objects to bind the behaviours to.
+* Changed the name of the bindNext method to bindNextSlide.
+* Changed the name of the bindPrevious method to bindPreviousSlide.
+* Removed the following options: play_pause_class, prev_class, next_class, stop_on_prev_next, index_class and stop_on_index.
+* Added auto-generation of control elements.
+
+Version 1.2 -- 27 Apr 2011
+--------------------------
+* Added bindIndex() method as a quick way to create "go to slide..." control functionality.
+* Added bindPrevious() and bindNext() methods as a quick way to create prev/next control functionality.
+* Added bindPlayPause() method as a quick way to create play/pause control functionality.
+* Added default event callbacks to options, to aid with setup of global slideshow functionality.
+* Added $.rsfSlideshow() method for setting options globally.
+* Added event triggers for slideshow events. 
+
+Version 1.1 -- 18 Apr 2011
+--------------------------
+* Changed the name of the plugin file to jquery.rs.slideshow.js to bring it into line with jQuery plugin naming convention.
+* Bug fix: More consistent behaviour across browsers when loading cached images into a slideshow.
+* Changes to the default markup used for specifying slide data. Markup now makes more sense semantically, and offers the opportunity to allow non-JavaScript users to click on links to slideshow images. (Extra CSS is required to do this, and we'll publish this soon).
+* slide_data_selectors option added. This makes slide data more customisable.
+* url_data_selector option removed (replaced by slide_data_selectors).
+* caption_data_selector option removed (replaced by slide_data_selectors).
+* link_url_data_selector option removed (replaced by slide_data_selectors).
+* effect_data_selector option removed (replaced by slide_data_selectors).

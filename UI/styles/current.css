@@ -1,0 +1,91 @@
+#current {
+    position: relative;
+    left: 0px;
+    /*top: -25px;*/
+    width: 103%;
+    color: #fff;
+    z-index: 1;
+    margin-left: 0px; /* left corner  width */
+    /*margin-top: -50px;*/
+    margin-bottom: 0; /* spacing under current */
+    cursor: move;
+}
+
+.current-content,
+.current-top,
+.current-bottom,
+.current-bottom div {
+    background: transparent url('../images/bg_current.png') no-repeat top right;
+}
+
+.current-content {
+    position: relative;
+    padding: 0px 20px 0px 0px;
+    height: 112px;
+}
+
+.current-top {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 25px; /* top corner width */
+    margin-left: -25px;
+    height: 100%;
+    background-position: top left;
+}
+
+.current-bottom { /* bottom */
+    position: relative;
+    width: 100%;
+}
+
+.current-bottom,
+.current-bottom div {
+    height: 25px; /* bottom height*/
+    font-size: 1px;
+}
+
+.current-bottom {
+    background-position: bottom right;
+}
+
+.current-bottom div {
+    position: relative;
+    width: 25px; /* bottom left corner width */
+    margin-left: -25px;
+    background-position: bottom left;
+}
+
+.current-header,
+.current-body,
+.current-footer {
+    position: relative;
+}
+
+.current-header {
+    overflow: hidden;
+    float: left;
+}
+
+.current-body {
+    height: 100px;
+}
+
+#current h1,
+#current h2,
+#current p {
+    margin: 0px; /* leave this alone */
+    padding: 0.5em 0px 0.5em 0px;
+    cursor: move;
+}
+
+#current p {
+    margin-top: 0.65em;
+    margin-left: 2em;
+    font-weight: bold;
+    cursor: move;
+}
+
+#current h1 {
+   padding-bottom: 0px;
+}

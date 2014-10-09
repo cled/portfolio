@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lab UI</title>
+
+    <script type="text/javascript" src="lib/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.8.2.custom.min.js"></script>
+
+    <link type="text/css" href="styles/themes/redmond/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/lab.css" media="screen">
+    <link rel="stylesheet" href="styles/labContent.css" media="screen">
+
+    <script type="text/javascript">
+
+    $(function() {
+
+        $("#lab").tabs();
+        $("#lab").hide();
+        $("#banner").hide();
+        $(".fade").css("background","transparent");
+        $('.logon').button();
+        $('.control').button();
+        $(".logon-bg").hide();
+
+        $(".signin-button")
+        .mouseover(function(){
+                   $(".signin-button-content,.signin-button-right").addClass('signin-button-over');
+
+        })
+
+        .mouseout(function(){
+                   $(".signin-button-content,.signin-button-right").removeClass('signin-button-over');
+
+        })
+        .click(function(){
+                   $(".signin-button-content,.signin-button-right").addClass('signin-button-clicked');
+                   $(".logon-bg").show();
+        });
+
+
+        $(".logon").click(function(){
+                          $(".logon-bg").hide();
+                          $(".signin-button").hide();
+                          $(".splash-logo").hide();
+                          $("#banner").show();
+                          $("#lab").show();
+                          $(".signin-button-content,.signin-button-right").removeClass('signin-button-clicked');
+                          });
+
+         $(".logoff").click(function(){
+                          $(".logon-bg").hide();
+                          $(".signin-button").show();
+                          $(".splash-logo").show();
+                          $("#banner").hide();
+                          $("#lab").hide();
+                          });
+
+        $(".close")
+            .click(function() {
+                $('#currentContainer').hide();
+                $(".fade").css("background","transparent");
+                $("#POC").fadeOut(0);
+                $("#POCContainer").hide(0);
+            });
+    });
+
+    </script>
+<style>
+
+.status-indicator {
+    position: relative;
+    float: right;
+}
+
+.resolutionleft {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 1680px;
+    height:1050px;
+    overflow: hidden;
+}
+
+.status-state {
+    position:relative;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:transparent url('images/status.png') bottom right no-repeat;
+}
+
+.status-indicator {
+    position:absolute;
+    width:105px;
+    height:105px;
+    top:910px;
+    left:1555px;
+}
+
+.splash-logo {
+    position:absolute;
+    left:650px;
+    top:80px;
+    background:transparent url('images/wpc_splash_logo.png') top no-repeat;
+    width:412px;
+    height:235px;
+}
+
+.lab-controls {
+    position:absolute;
+    width:105px;
+    height:600px;
+    top:200px;
+    left:1555px;
+    background:transparent;
+}
+
+.credentials {
+    position:absolute;
+    width:105px;
+    height:75px;
+    top:68px;
+    left:1555px;
+    background:transparent;
+}
+
+.signin-button {
+    top:350px;
+    left:694px;
+    position:absolute;
+    width:160px;
+    height:42px;
+    z-index:12;
+}
+
+.signin-button-content {
+    position:relative;
+    float:left;
+    background:transparent url('images/button_off.png') top left no-repeat;
+    width:120px;
+    height:42px;
+}
+
+.signin-button-right {
+    position:relative;
+    float:left;
+    background:transparent url('images/button_off.png') top right no-repeat;
+    width:40px;
+    height:42px;
+}
+
+.signin-button-right img {
+    margin-top:2px;
+}
+
+.signin-button-over {
+    background:transparent url('images/button_over.png') no-repeat;
+}
+
+.signin-button-clicked {
+    background:transparent url('images/button_on.png') no-repeat;
+}
+
+.signin-button-right {
+    background-position: top right ;
+}
+
+.signin-button-content{
+    background-position: top left ;
+}
+
+.logon-bg {
+    position:absolute;
+    width:340px;
+    height:150px;
+    top:400px;
+    left:690px;
+    margin:0px;
+    padding:0px;
+    z-index:12;
+}
+
+.logon-bg-topleft{
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/bg_current.png') top left no-repeat;
+}
+.logon-bg-topright{
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/bg_current.png') top right no-repeat;
+}
+.logon-bg-bottomleft{
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/bg_current.png') bottom left no-repeat;
+}
+.logon-bg-bottomright{
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/bg_current.png') bottom right no-repeat;
+}
+
+.logon-content {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    margin:20px;
+}
+
+INPUT {
+    border:1px;
+    background:#fff;
+}
+
+#lab {
+    position:absolute;
+    left:5px;
+    top:0px;
+    height:1050px;
+    width:1680px;
+}
+
+.logon {
+    width:170px;
+    position:absolute;
+    left:125px;
+}
+
+.logon-button-right {
+    position:relative;
+    float:right;
+    margin-top:2px;
+}
+
+.control{
+    width: 100%;
+    border: 1;
+    margin-bottom: 0.1em;
+}
+
+.ui-state-default {
+    background: transparent url('images/tab_bg_off.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+.ui-state-hover {
+    background: transparent url('images/tab_bg_over.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+.ui-state-active {
+    background: transparent url('images/tab_bg_on.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+.ui-state-focus {
+    background: transparent url('images/tab_bg_on.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+.ui-widget-content .ui-state-default {
+    background: transparent url('images/tab_bg_off.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+.ui-widget-header .ui-state-default {
+    background: transparent url('images/tab_bg_off.png') repeat-x top left;
+    border-color: #fff;
+    border: 1;
+    margin:0px;
+    padding:0px;
+}
+
+#lab-bg {
+    position:relative;
+    width:1670px;
+    height:1000px;
+    top:0px;
+    left:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.lab-bg-topleft {
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/bg_lab.png') top left no-repeat;
+}
+
+.lab-bg-topright {
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/bg_lab.png') top right no-repeat;
+}
+
+.lab-bg-bottomleft {
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/bg_lab.png') bottom left no-repeat;
+}
+
+.lab-bg-bottomright {
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/bg_lab.png') bottom right no-repeat;
+}
+
+#image-shadow {
+    position:absolute;
+    width:1554px;
+     height:984px;
+    top:51px;
+    left:8px;
+    margin:0px;
+    padding:0px;
+}
+
+.image-shadow-topleft {
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/image_shadow.png') top left no-repeat;
+}
+
+.image-shadow-topright {
+    position:relative;
+    float:left;
+    width:50%;
+    height:75%;
+    background:transparent url('images/image_shadow.png') top right no-repeat;
+}
+
+.image-shadow-bottomleft {
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/image_shadow.png') bottom left no-repeat;
+}
+
+.image-shadow-bottomright {
+    position:relative;
+    float:left;
+    width:50%;
+    height:25%;
+    background:transparent url('images/image_shadow.png') bottom right no-repeat;
+}
+
+#banner{
+    position:static;
+    left:1185px;
+    top:0px;
+    height:65px;
+    background:transparent url('images/wpc_logo.png') top right no-repeat;
+    z-index:32;
+}
+
+.logon-row{
+    height:30px;
+}
+
+.idleft{
+    position:relative;
+    width:140px;
+    float:left;
+}
+
+.idright{
+    position:relative;
+    float:left;
+}
+</style>
+</head>
+
+<body>
+    <div class="resolutionleft">
+        <div class="fade">
+            <div id="banner"></div>
+            <div class="splash-logo">
+            </div>
+
+            <div class="signin-button">
+                <div class="signin-button-content">
+                <h2>Sign in</h2>
+                </div>
+                <div class="signin-button-right">
+                <img src="images/arrow.png">
+                </div>
+            </div>
+
+            <div class="logon-bg">
+                <div class="logon-bg-topleft"></div>
+                <div class="logon-bg-topright"></div>
+                <div class="logon-bg-bottomleft"></div>
+                <div class="logon-bg-bottomright"></div>
+                <div class="logon-content">
+                    <div class="logon-row">
+                        <div class="idleft"><h3>Live ID:</h3></div> <div class="idright"><input></input></div>
+                    </div>
+                    <div class="logon-row">
+                        <div class="idleft"><h3>Password:</h3></div> <div  class="idright"><input></input></div>
+                    </div>
+                    <button class="logon">
+                        <h2>Log on</h2><div class="logon-button-right"><img src="images/arrow.png"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="lab">
+                <div id="lab-tabs">
+                    <ul>
+                        <li>
+                            <a href="#lab-tabs-1">
+                                Tabs 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#lab-tabs-2">
+                                Tabs 2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#lab-tabs-3">
+                                Tabs 3
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="lab-bg">
+                        <div class="lab-bg-topleft"></div>
+                        <div class="lab-bg-topright"></div>
+                        <div class="lab-bg-bottomleft"></div>
+                        <div class="lab-bg-bottomright"></div>
+                    </div>
+                    <div id="image-shadow">
+                        <div class="image-shadow-topleft"></div>
+                        <div class="image-shadow-topright"></div>
+                        <div class="image-shadow-bottomleft"></div>
+                        <div class="image-shadow-bottomright"></div>
+                    </div>
+                    <div id="labContent">
+                        <div class="lab-content-content">
+                                <div id="lab-tabs-1">
+                                    
+                                </div>
+                                <div id="lab-tabs-2">
+                                    
+                                </div>
+                                <div id="lab-tabs-3">
+                                    
+                                </div>
+                        </div>
+                    </div>
+                    <div class="credentials">
+                        <button class="control logoff">
+                        Log off
+                        </button>
+                    </div>
+
+                    <div class="lab-controls">
+                        <button class="control play">
+                        Play
+                        </button>
+                        <button class="control restart">
+                        Restart
+                        </button>
+                        <button class="control stop">
+                        Stop
+                        </button>
+                        <button class="control load">
+                        Load
+                        </button>
+                    </div>
+
+                    <div class="status-indicator">
+                        <div class="status-state">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--fade-->
+    </div><!--resolution-->
+</body>
+</html>

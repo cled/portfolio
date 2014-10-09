@@ -1,0 +1,283 @@
+BODY {
+    background: transparent url('../images/backgroundleft.jpg') top left no-repeat;
+    font: 100% normal tahoma,"sans serif";
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+H1 {
+    font: 3em tahoma,"sans serif";
+    color: #515A79;
+    cursor: default;
+    height: 3em;
+    overflow: hidden;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+H2 {
+    font: 1.5em tahoma,"sans serif";
+    color: #515A79;
+    cursor: default;
+    overflow: hidden;
+    font-weight: bold;
+    display:inline;
+    margin-left:10px;
+}
+
+H3 {
+    font: 1em tahoma,"sans serif";
+    color: #000;
+    cursor: default;
+    height: 1em;
+    overflow: hidden;
+    font-weight: bold;
+        display:inline;
+
+}
+
+P {
+    font: 1em tahoma,"sans serif";
+    line-height: 1.5em;
+    color: #000;
+    cursor: default;
+    display:inline;
+}
+
+.close {
+    float: right;
+    margin-top: 12px;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    background: transparent url('../images/x.png') bottom no-repeat;
+}
+
+.close:hover {
+    background: transparent url('../images/x2.png') bottom no-repeat;
+}
+
+.ui-tabs {
+    padding: 0.2em;
+    background: transparent;
+    border: 0;
+}
+
+#lab-tabs .ui-tabs {}
+#lab-tabs .ui-tabs-nav {}
+#lab-tabs .ui-widget {}
+#lab-tabs .ui-widget-header {}
+
+#lab-tabs .ui-widget-content {
+    border: 0;
+    cursor: default;
+    font: 0.85em tahoma,"sans serif";
+    font-weight: normal;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    padding-top: 20px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#lab-tabs .ui-state-default {
+    background: transparent url('../images/tab_bg_off.png') repeat-x top left;
+    border-color: #5784c8;
+    border-bottom: 1px;
+}
+#lab-tabs .ui-state-hover {
+    background: transparent url('../images/tab_bg_over.png') repeat-x top left;
+    border-color: #5784c8;
+    border-bottom: 1px;
+}
+
+#lab-tabs .ui-state-active {
+    background: transparent url('../images/tab_bg_on.png') repeat-x top left;
+    border-color: #5784c8;
+}
+
+#lab-tabs .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited,
+#lab-tabs .ui-state-hover a, .ui-state-hover a:link, .ui-state-hover a:visited,
+#lab-tabs .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color:#515A79;
+}
+
+#lab-tabs .ui-corner-top {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#lab-tabs .ui-tabs-nav li.ui-tabs-selected a,
+#lab-tabs .ui-tabs-nav li.ui-state-disabled a,
+#lab-tabs .ui-tabs-nav li.ui-state-processing a,
+#lab-tabs .ui-tabs-nav li a,
+#lab-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+    cursor: default;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+    margin-bottom: 0;
+    padding-bottom: 1px;
+    z-index:1;
+}
+
+#lab-tabs .ui-tabs-nav {
+    position: relative;
+    width: 500px;
+    left: 20px;
+    background: transparent;
+    border: 0;
+}
+
+#lab-tabs .ui-corner-all {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#lab-tabs {
+    background: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-top: 0px;
+    margin-left: 0%;
+    border: 0px;
+    height: 100%;
+    width: 94.5%;
+    z-index: 2;
+}
+
+#POC {
+    background: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 975px;
+    height: 650px;
+    z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#POCContainer {
+    background: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 999px;
+    height: 1600px;
+    z-index: 3;
+}
+
+.ui-effects-transfer {
+    border: 2px dotted gray;
+}
+
+.title {
+    width: 200px;
+    position: absolute;
+    float: left;
+    height: 100%;
+    background: transparent;
+}
+
+.resolution {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 1050px;
+    height: 1680px;
+    overflow: hidden;
+}
+
+.fade {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('../images/fade.png');
+}
+
+/*
+.play {
+    top: 10px;
+    margin: 3px;
+    padding: 8px;
+    height: 32px;
+    z-index: 10;
+}
+
+
+.play .ui-button-text,.play .ui-button-text-only {
+    padding: 0 0 0 0;
+    line-height: 0;
+}
+*/
+
+.template {
+    display: none;
+}
+
+#lab-tabs-list {
+    padding-top: 40px;
+    overflow: auto;
+    height: 1640px;
+}
+
+.lab-popup-content {
+    clear: both;
+}
+
+.lab-popup-buttons {
+    float: left;
+    width: 150px;
+    margin-top: -15px;
+}
+
+.lab-popup-description {
+    float: left;
+    width: 700px;
+}
+
+.lab-popup-launched {
+    width: 100%;
+}
+
