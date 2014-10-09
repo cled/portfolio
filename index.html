@@ -78,7 +78,7 @@
             </div>
 
         </div>
-        <a href="http://marty.haxel.ca/guitar" target="_new" >
+        <a href="http://cled.github.io/portfolio/guitar" target="_new" >
             <div class="media right20">
                 <div class="magnify">
                 </div>
@@ -121,7 +121,7 @@
 
         </div>
         <div class="simple_overlay video_overlay" id="overlay2">
-            <iframe id="player" width="853" height="480" src="http://www.youtube.com/embed/9R1vNCT7mWo?rel=0?enablejsapi=1&version=3&origin=http://marty.haxel.ca" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player" width="853" height="480" frameborder="0" allowfullscreen></iframe>
         </div>
 
     </div>
@@ -523,7 +523,7 @@
 
         </div>
         <div class="simple_overlay video_overlay2" id="overlay7">
-            <iframe id="player2" width="640" height="480" src="http://www.youtube.com/embed/SGaA2UQN5Bs?enablejsapi=1&version=3&origin=http://marty.haxel.ca" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player2" width="640" height="480" src="http://www.youtube.com/embed/SGaA2UQN5Bs?enablejsapi=1&version=3&origin=http://cled.github.io" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -550,7 +550,7 @@
 
         </div>
         <div class="simple_overlay video_overlay" id="overlay4">
-            <iframe id="player3" width="853" height="480" src="http://www.youtube.com/embed/BJKkmCM7x8M?enablejsapi=1&version=3&origin=http://marty.haxel.ca" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player3" width="853" height="480" src="http://www.youtube.com/embed/BJKkmCM7x8M?enablejsapi=1&version=3&origin=http://cled.github.io" frameborder="0" allowfullscreen></iframe>
         </div>
 
     </div>
@@ -584,7 +584,7 @@
 
         <div class="simple_overlay video_overlay2" id="overlay3">
 
-        <iframe id="player4" width="640" height="480" src="http://www.youtube.com/embed/videoseries?list=PLLZsU9Vbfc5jB1sfrtiCrwdefITSgF99e&amp;hl=en_US?enablejsapi=1&version=3&origin=http://marty.haxel.ca" frameborder="0" allowfullscreen></iframe>
+        <iframe id="player4" width="640" height="480" src="http://www.youtube.com/embed/videoseries?list=PLLZsU9Vbfc5jB1sfrtiCrwdefITSgF99e&amp;hl=en_US?enablejsapi=1&version=3&origin=http://cled.github.io" frameborder="0" allowfullscreen></iframe>
 
 
         </div>
@@ -610,6 +610,38 @@
 </script>
 <script>
 
+
+var player = {
+  playVideo: function(player, 9R1vNCT7mWo) {
+    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
+      window.onYouTubeIframeAPIReady = function() {
+        player.loadPlayer(player, 9R1vNCT7mWo);
+      };
+
+      $.getScript('//www.youtube.com/iframe_api');
+    } else {
+      player.loadPlayer(player, 9R1vNCT7mWo);
+    }
+  },
+
+  loadPlayer: function(player, 9R1vNCT7mWo) {
+    new YT.Player(player, {
+      videoId: 9R1vNCT7mWo,
+      width: 853,
+      height: 480,
+      playerVars: {
+        enablejsapi: 1,
+        version: 3,
+        origin: 'http://cled.github.io',
+        autoplay: 1,
+        controls: 0,
+        modestbranding: 1,
+        rel: 0,
+        showInfo: 0
+      }
+    });
+  }
+};
       var player,player2,player3,player4;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player');
