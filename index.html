@@ -78,7 +78,7 @@
             </div>
 
         </div>
-        <a href="http://cled.github.io/portfolio/guitar" target="_new" >
+        <a href="http://cled.github.io/guitar" target="_new" >
             <div class="media right20">
                 <div class="magnify">
                 </div>
@@ -121,7 +121,7 @@
 
         </div>
         <div class="simple_overlay video_overlay" id="overlay2">
-            <iframe id="player" width="853" height="480" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player" width="853" height="480" src="http://www.youtube.com/embed/9R1vNCT7mWo?rel=0?enablejsapi=1&version=3&origin=http://cled.github.io" frameborder="0" allowfullscreen></iframe>
         </div>
 
     </div>
@@ -609,30 +609,25 @@
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
 <script>
-
-
 var player = {
-  playVideo: function(player, 9R1vNCT7mWo) {
+  playVideo: function(container, videoId) {
     if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
       window.onYouTubeIframeAPIReady = function() {
-        player.loadPlayer(player, 9R1vNCT7mWo);
+        player.loadPlayer(container, videoId);
       };
 
       $.getScript('//www.youtube.com/iframe_api');
     } else {
-      player.loadPlayer(player, 9R1vNCT7mWo);
+      player.loadPlayer(container, videoId);
     }
   },
 
-  loadPlayer: function(player, 9R1vNCT7mWo) {
-    new YT.Player(player, {
-      videoId: 9R1vNCT7mWo,
-      width: 853,
-      height: 480,
+  loadPlayer: function(container, videoId) {
+    new YT.Player(container, {
+      videoId: videoId,
+      width: 356,
+      height: 200,
       playerVars: {
-        enablejsapi: 1,
-        version: 3,
-        origin: 'http://cled.github.io',
         autoplay: 1,
         controls: 0,
         modestbranding: 1,
@@ -652,30 +647,30 @@ var player = {
 </script>
 
 <script>
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    setTimeout(function(){
+//     setTimeout(function(){
 
-        $("div[rel]").overlay({
-
-
-
-                onBeforeClose: function() {
-                    console.log(player);
-                    player.stopVideo();
-                    player.pauseVideo();
-                    player2.pauseVideo();
-                    player3.pauseVideo();
-                    player4.pauseVideo();
-            }
+//         $("div[rel]").overlay({
 
 
 
-        });
+//                 onBeforeClose: function() {
+//                     console.log(player);
+//                     player.stopVideo();
+//                     player.pauseVideo();
+//                     player2.pauseVideo();
+//                     player3.pauseVideo();
+//                     player4.pauseVideo();
+//             }
 
-    },1000)
 
-});
+
+//         });
+
+//     },1000)
+
+// });
 
 
 </script>
