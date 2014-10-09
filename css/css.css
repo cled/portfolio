@@ -19,7 +19,7 @@ body {
 	padding: 0;
 	font-family: Verdana, sans-serif;
 	font-size:14px;
-	background: #005183 url(../piratescene2.jpg) no-repeat fixed;
+	background: #ffffff url(../piratescene2.jpg) no-repeat fixed;
 	text-align:center;
     }
 
@@ -59,7 +59,7 @@ body {
 	cursor:text;
 	padding-top:12px;
 }
-	
+
 .content {
 	margin-top:20px;
 	min-width:600px;
@@ -94,8 +94,8 @@ div.titleHover:hover{
 	height:45px;
 	cursor:default;
 }
-                    	
-    
+
+
 .titlesBG {
 	width:600px;
 	height: 45px;
@@ -173,19 +173,19 @@ div.magnify:hover,div.magnify2:hover {
 	float: right;
     }
 
-.transC {  
-    padding: 0;  
+.transC {
+    padding: 0;
     width: 194px;
-    
-    position: relative;  
+
+    position: relative;
     margin: 0;
     overflow: hidden;
     z-index: -2;
     border:1px;
-    
+
 }
 
-.transparency {  
+.transparency {
     opacity: 0.7;
     filter: alpha(opacity=70);
     -moz-opacity: 0.7;
@@ -216,18 +216,18 @@ div.overlay {
     display:none;
     padding:0px;
     border:2px solid #000;
-} 
- 
-div.overlay div.close { 
-    background-image:url(../close.png); 
-    position:absolute; 
-    right:5px; 
-    top:5px; 
-    cursor:pointer; 
-    height:35px; 
-    width:35px; 
+}
+
+div.overlay div.close {
+    background-image:url(../close.png);
+    position:absolute;
+    right:5px;
+    top:5px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
     text-align:left;
-} 
+}
 .external{
 width:100%;
 height:100%;
@@ -237,7 +237,7 @@ display:block;
 }
 
 div.overlayVideo {
-	padding:0px;	
+	padding:0px;
 	width:960px;
 	height:540px;
 	display:none;
@@ -250,7 +250,7 @@ div.overlayVideo div.close {
 	background:url(../close.png) no-repeat;
 	position:absolute;
 	top:-35px;
-	right:2px; 
+	right:2px;
 	width:35px;
 	height:35px;
 	cursor:pointer;
@@ -264,7 +264,7 @@ div.overlayVideo a {
 
 
 div.overlayVideo2 {
-	padding:0px;	
+	padding:0px;
 	width:480px;
 	height:360px;
 	display:none;
@@ -277,7 +277,7 @@ div.overlayVideo2 div.close {
 	background:url(../close.png) no-repeat;
 	position:absolute;
 	top:-35px;
-	right:2px; 
+	right:2px;
 	width:35px;
 	height:35px;
 	cursor:pointer;
