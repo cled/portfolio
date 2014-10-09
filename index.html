@@ -598,7 +598,10 @@
 
 <!-- -->
 </body>
-
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+<script src="js/jquery.rs.slideshow.js"></script>
+<script src="js/dynamic-controls-bootstrap.js"></script>
+<script src="js/js.js" ></script>
 <script>
       var tag = document.createElement('script');
       tag.src = "http://www.youtube.com/iframe_api";
@@ -606,21 +609,20 @@
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
 <script>
-      var player,player2,player3,player4;
+
+
+</script>
+
+<script>
+$(document).ready(function() {
+
       function onYouTubeIframeAPIReady() {
+        var player,player2,player3,player4;
         player = new YT.Player('player');
         player2 = new YT.Player('player2');
         player3 = new YT.Player('player3');
         player4 = new YT.Player('player4');
       }
-</script>
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-<script src="js/jquery.rs.slideshow.js"></script>
-<script src="js/dynamic-controls-bootstrap.js"></script>
-<script src="js/js.js" ></script>
-<script>
-$(document).ready(function() {
-
 
     $("div[rel]").overlay({
 
