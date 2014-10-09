@@ -78,7 +78,7 @@
             </div>
 
         </div>
-        <a href="http://cled.github.io/guitar" target="_new" >
+        <a href="http://cled.github.io/portfolio/guitar" target="_new" >
             <div class="media right20">
                 <div class="magnify">
                 </div>
@@ -609,34 +609,6 @@
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
 <script>
-var player = {
-  playVideo: function(container, videoId) {
-    if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
-      window.onYouTubeIframeAPIReady = function() {
-        player.loadPlayer(container, videoId);
-      };
-
-      $.getScript('//www.youtube.com/iframe_api');
-    } else {
-      player.loadPlayer(container, videoId);
-    }
-  },
-
-  loadPlayer: function(container, videoId) {
-    new YT.Player(container, {
-      videoId: videoId,
-      width: 356,
-      height: 200,
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        modestbranding: 1,
-        rel: 0,
-        showInfo: 0
-      }
-    });
-  }
-};
       var player,player2,player3,player4;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player');
@@ -647,30 +619,30 @@ var player = {
 </script>
 
 <script>
-// $(document).ready(function() {
+    // $(document).ready(function() {
 
-//     setTimeout(function(){
+    //     setTimeout(function(){
 
-//         $("div[rel]").overlay({
-
-
-
-//                 onBeforeClose: function() {
-//                     console.log(player);
-//                     player.stopVideo();
-//                     player.pauseVideo();
-//                     player2.pauseVideo();
-//                     player3.pauseVideo();
-//                     player4.pauseVideo();
-//             }
+    //         $("div[rel]").overlay({
 
 
 
-//         });
+    //                 onBeforeClose: function() {
+    //                     console.log(player);
+    //                     player.stopVideo();
+    //                     player.pauseVideo();
+    //                     player2.pauseVideo();
+    //                     player3.pauseVideo();
+    //                     player4.pauseVideo();
+    //             }
 
-//     },1000)
 
-// });
+
+    //         });
+
+    //     },1000)
+
+    // });
 
 
 </script>
